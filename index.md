@@ -3,7 +3,7 @@
     <head>
     </head>
     <body>
-        <h1>My First Page</h1>
+        <h1>TaggartDoesStuff Placeholder</h1>
         <p>This is a placeholder for the site until I actually get good at HTML.</p>
 		<hr>
         <p>I have a Minecraft Java Edition Forge Modded server & pack: <a href="https://www.curseforge.com/minecraft/modpacks/spacing-guild-network/files/3647455">Here's a link.</a></p>
