@@ -1,0 +1,6 @@
+[
+ {
+  "allow_farlands_worldgen": false,
+  "description": "Removes a part of code that prevents far lands known from Minecraft beta 1.7 and earlier from generating in CustomCubic"
+ }
+]

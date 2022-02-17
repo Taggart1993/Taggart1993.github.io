@@ -1,0 +1,60 @@
+local component = require("component")
+local computer = require("computer")
+local term = require("term")
+
+if not term.isAvailable() then
+  computer.beep()
+  os.exit()
+end
+if component.gpu.getDepth() < 4 then
+  print("A tier 2 or higher GPU is required")
+  os.exit()
+end
+
+local noExit = true
+local filter = "warpdrive"
+local args = {...}
+if #args > 0 then
+  if args[1] == "help" or args[1] == "?" then
+    print("Usage: disable [<machineName>]")
+    print()
+    print("Disable all machines which contains that name.")
+    print("Name is case insensitive, try AirGenerator, Medium, Farm, ForceField, etc.")
+    print("Default is warpdrive which is all machines.")
+    print("Related machines requires Computer interfaces.")
+    print()
+    noExit = false
+  else
+    filter = args[1]
+  end
+end
+
+if noExit then
+  print("Disabling " .. filter .. " machines:")
+  filter = string.upper(filter)
+  local count = 0
+  for address, deviceType in component.list() do
+    if string.find(string.upper(deviceType), filter) ~= nil then
+      local machine = component.proxy(address)
+      if machine.isInterfaced() ~= true then
+        term.write(address .. " " .. deviceType .. " has no computer interface")
+      else
+        count = count + 1
+        local isEnabled = machine.enable()
+        if isEnabled then
+          machine.enable(false)
+        end
+        term.write(address .. " " .. deviceType .. " is disabled")
+      end
+      print()
+    end
+  end
+  
+  if count == 0 then
+    print("No machine detected")
+    
+    noExit = false
+  end
+end
+
+print()
