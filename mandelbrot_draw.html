@@ -1,0 +1,65 @@
+<!DOCTYPE html> 
+<html> 
+<head><title>Mandelbrot Demo</title> 
+<script> 
+function drawMandel() { 
+  var mandel = document.getElementById("mandel"); 
+  var ctx = mandel.getContext("2d"); 
+  var colors = ["#00F","#FFF", "#90F", "#70D", "#407", "#224", "#632", 
+    "#A41", "#F00", "#F52", "#F75", "#EA8", "#953", "#333", "#000"]; 
+  for (var y=0; y<600; y++) { 
+    for (var x=0; x<800; x++) { 
+      var z = {a:(x - 525) / 260, b:(y - 300) / 220}; 
+      var i = 0, z2 = z; 
+      for (i=0; i<colors.length - 1; i++) { 
+        z2 = {a:z2.a * z2.a - z2.b * z2.b + z.a, b:2 * z2.a * z2.b + z.b}; 
+        if (z2.a * z2.a + z2.b * z2.b > 4) break; 
+      } 
+      ctx.fillStyle = colors[i]; 
+      ctx.fillRect(x,y,1,1); 
+    } 
+  } 
+} 
+</script> 
+</head> 
+<body onload="drawMandel()"> 
+<canvas id="mandel" width="800" height="600" unselectable="on" class="unselectable"> 
+</canvas> 
+</body> 
+</html> 
+Featured In
+Icon for Thats-Insane
+Thats-Insane · 
+Follow
+Posted by 
+Mélissa Theuriau
+ 
+Oct 6
+Icon for Interesting Information
+Interesting Information · 
+Follow
+Posted by 
+Kai Howells
+ 
+Sep 28
+252.6K viewsView 3,137 upvotesView 86 shares
+
+3.1K
+
+
+86
+
+31
+
+
+31 comments from 
+Max Loh
+ and more
+
+Icon for LOL ! - MEME
+LOL ! - MEME · 
+Follow
+Answered by 
+Zac Leach
+ 
+Oct 25
