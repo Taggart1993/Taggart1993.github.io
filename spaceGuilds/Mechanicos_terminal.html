@@ -4,12 +4,16 @@
 	<head>
 		<style>
 			p {
-			line-height:0.1
+			background-color:black; 
+			color:#8F2B1F; 
+			font-family:Courier New; 
+			font-size:14px;
+			line-height:0.1;
 			}
 		</style>
 	</head>
 	
-	<body style="background-color:black; color:#8F2B1F; font-family:Courier New; font-size:14px">
+	<body style="">
 	
 		<audio "terminalStartSound">
 			<source src="\terminal_start.wav" type="audio/wav">
@@ -22,19 +26,21 @@
 	</body>
 
 	<script>
+		//some things for possible use later
 		console.log("ToasterFricker go brrrrrrrr");
 		var terminalStartSound = document.getElementById("terminalStartSound");
 		var ph = "Blam!";
 		var emptyText = "";
-		var emptySpaces;
 
 		function MechaniBIOS(){
+			//BIOS variables
 			var xp1 = document.createElement("P");
 			var xp2 = document.createElement("P");
 			var xp3 = document.createElement("P");
 			var l1 = document.createTextNode("╔══════════════════════════════════════╗");
 			var l2 = document.createTextNode("║MechanicOS v001 by Pet American Gaming║");
 			var l3 = document.createTextNode("╚══════════════════════════════════════╝");
+			//Write terminal header
 			xp1.appendChild(l1);
 			document.body.appendChild(xp1);
 			xp2.appendChild(l2);
