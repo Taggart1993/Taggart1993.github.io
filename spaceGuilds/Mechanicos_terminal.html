@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<style>
+			p {
+			line-height:0.1
+			}
+		</style>
+	</head>
+	
+	<body style="background-color:black; color:#8F2B1F; font-family:Courier New; font-size:14px">
+	
+		<audio "terminalStartSound">
+			<source src="terminal_start.wav" type="audio/wav">
+			Your browser does not support the audio element.
+		</audio>
+		
+		<button type="button" onclick="MechaniBIOS()">Press to start MechanicOS terminal</button>
+		
+	
+	</body>
+
+	<script>
+		console.log("ToasterFricker go brrrrrrrr");
+		var terminalStartSound = document.getElementById("terminalStartSound");
+		var ph = "Blam!";
+		var emptyText = "";
+		var emptySpaces;
+
+		function MechaniBIOS(){
+			terminalStartSound.play();
+			var xp1 = document.createElement("P");
+			var xp2 = document.createElement("P");
+			var xp3 = document.createElement("P");
+			var l1 = document.createTextNode("╔══════════════════════════════════════╗");
+			var l2 = document.createTextNode("║MechanicOS v001 by Pet American Gaming║");
+			var l3 = document.createTextNode("╚══════════════════════════════════════╝");
+			xp1.appendChild(l1);
+			document.body.appendChild(xp1);
+			xp2.appendChild(l2);
+			document.body.appendChild(xp2);
+			xp3.appendChild(l3);
+			document.body.appendChild(xp3);
+			
+		}
+
+	</script>
+
+</html>
